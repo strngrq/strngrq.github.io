@@ -50,6 +50,78 @@
     <header>
       
         <div class="icon"></div>
+        <time datetime="2017-11-19T06:32:00.000Z"><a href="/2017/11/19/2017/2017-11-19-What happens when ... Kubernetes edition!/">19-11-2017</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2017/11/19/2017/2017-11-19-What happens when ... Kubernetes edition!/">What happens when ... Kubernetes edition!</a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <p>Imagine I want to deploy nginx to a Kubernetes cluster. I’d probably type something like this in my terminal:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">kubectl run --image=nginx --replicas=3</span><br></pre></td></tr></table></figure>
+<p>and hit enter. After a few seconds, I should see three nginx pods spread across all my worker nodes. It works like magic, and that’s great! But what’s really going on under the hood?</p>
+<p>One of the awesome things about Kubernetes is that it handles the deployment of workloads across infrastructure through user-friendly APIs. Complexity is hidden by simple abstraction. But in order to fully understand the value it offers us, it’s also useful to understand its internals. This guide will lead you through the full lifecycle of a request from the client to the kubelet, linking off to the source code where necessary to illustrate what’s going on.</p>
+<p><a href="https://github.com/jamiehannaford/what-happens-when-k8s" target="_blank" rel="external">https://github.com/jamiehannaford/what-happens-when-k8s</a></p>
+
+      
+    </div>
+    <footer>
+      
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
+  <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2017-11-17T21:09:00.000Z"><a href="/2017/11/18/2017/2017-11-18-Антихрупкость/">18-11-2017</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2017/11/18/2017/2017-11-18-Антихрупкость/">Антихрупкость</a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <p><a href="https://www.ozon.ru/context/detail/id/24310355/?gclid=EAIaIQobChMIzczj4sLG1wIVWC0ZCh3WxQtDEAAYAiAAEgKSnfD_BwE" target="_blank" rel="external"> https://www.ozon.ru/context/detail/id/24310355/?gclid=EAIaIQobChMIzczj4sLG1wIVWC0ZCh3WxQtDEAAYAiAAEgKSnfD_BwE</a></p>
+<p><img src="/images/anti.jpg" alt=""></p>
+<p>Скульптура антихрупкости. Вигутры в неравнвесной ассиметричной конфигурации (треугольники к примеру) Треугольники стоят друг на друге</p>
+
+      
+    </div>
+    <footer>
+      
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
+  <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
         <time datetime="2017-11-17T12:31:00.000Z"><a href="/2017/11/17/2017/2017-11-17-Свободный аналог Alpha Go Zero с исходниками/">17-11-2017</a></time>
       
       
@@ -61,7 +133,7 @@
     <div class="entry">
       
         <p><a href="https://github.com/gcp/leela-zero" target="_blank" rel="external">https://github.com/gcp/leela-zero</a></p>
-<p>Проблема проекта в том, что чтоб играть как Aplha GO ему нужно примерно 1700 лет обучения на одном GPU. Ожидание автора в том, публикация исходников и просьба подключиться к рассчетам всех желающих, поможет кардинально сократить это время. </p>
+<p>Проблема проекта в том, что чтоб играть как Aplha GO ему нужно примерно 1700 лет обучения на одном GPU.  Публикация исходников и просьба подключиться к рассчетам всех желающих, поможет кардинально сократить это время. </p>
 
       
     </div>
@@ -554,78 +626,6 @@
 
 
 
-  <article class="post">
-  
-  <div class="post-content">
-    <header>
-      
-        <div class="icon"></div>
-        <time datetime="2017-03-24T20:34:00.000Z"><a href="/2017/03/24/2017/Децентрализованные сервисы и blockchain/">24-03-2017</a></time>
-      
-      
-  
-    <h1 class="title"><a href="/2017/03/24/2017/Децентрализованные сервисы и blockchain/">Децентрализованные сервисы и blockchain</a></h1>
-  
-
-    </header>
-    <div class="entry">
-      
-        <p>Еще несколько децентрализованных сервисов, основанных на технологии blockchain. <a href="https://lbry.io/" target="_blank" rel="external">https://lbry.io/</a> - Lbry позиционирует себя как децентрализованная сеть для продажи цифрового контента.</p>
-<p>OpenBazar - <a href="http://openbazaar.org" target="_blank" rel="external">openbazaar.org</a> Децентрализованная торговая площадка. Судя по проблемам с сертификатом, что-то у них идет не так.</p>
-<p>openbazaar.org - Децентрализованная краудфандинговая площадка, на которой тоже что-то пошло не так. Сайт не открывается.</p>
-
-      
-    </div>
-    <footer>
-      
-        
-        
-      
-      <div class="clearfix"></div>
-    </footer>
-  </div>
-</article>
-
-
-
-
-  <article class="post">
-  
-  <div class="post-content">
-    <header>
-      
-        <div class="icon"></div>
-        <time datetime="2017-03-24T19:43:00.000Z"><a href="/2017/03/24/2017/Моделирование систем с обратной связью/">24-03-2017</a></time>
-      
-      
-  
-    <h1 class="title"><a href="/2017/03/24/2017/Моделирование систем с обратной связью/">Моделирование систем с обратной связью</a></h1>
-  
-
-    </header>
-    <div class="entry">
-      
-        <p><a href="http://ncase.me/loopy/" target="_blank" rel="external">http://ncase.me/loopy/</a> - Рисование и моделирование систем с положительной м отрицательной обратной связью от экологии до процессов разработки ПО. Простая и достаточно милая визуализация.</p>
-<p>Результат работы скрипта</p>
-<p><img src="images/feature_play.gif" alt="Так выглядит визуализация"></p>
-<p>А вот так происходит рисование бизнес-процесса</p>
-<p><img src="images/feature_draw.gif" alt="Так выглядит рисование"></p>
-
-      
-    </div>
-    <footer>
-      
-        
-        
-      
-      <div class="clearfix"></div>
-    </footer>
-  </div>
-</article>
-
-
-
-
 
 <nav id="pagination">
   
@@ -655,11 +655,11 @@
   
     <li><a href="/categories/Дизайн/">Дизайн</a><small>1</small></li>
   
-    <li><a href="/categories/Книги/">Книги</a><small>2</small></li>
+    <li><a href="/categories/Книги/">Книги</a><small>3</small></li>
   
     <li><a href="/categories/Музыка/">Музыка</a><small>1</small></li>
   
-    <li><a href="/categories/Программирование/">Программирование</a><small>16</small></li>
+    <li><a href="/categories/Программирование/">Программирование</a><small>17</small></li>
   
     <li><a href="/categories/Путешествия/">Путешествия</a><small>1</small></li>
   
@@ -702,7 +702,7 @@
   
     <li><a href="/tags/Машинное-обучение/">Машинное обучение</a><small>10</small></li>
   
-    <li><a href="/tags/Микросервисы/">Микросервисы</a><small>1</small></li>
+    <li><a href="/tags/Микросервисы/">Микросервисы</a><small>2</small></li>
   
     <li><a href="/tags/Презентации/">Презентации</a><small>1</small></li>
   
