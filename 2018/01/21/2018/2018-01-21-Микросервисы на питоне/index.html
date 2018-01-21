@@ -3,15 +3,15 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Билд скрипты для редактора Atom | Strangers in the Q</title>
+  <title>Микросервисы на питоне | Strangers in the Q</title>
   <meta name="author" content="strngrq">
   
-  <meta name="description" content="https://atom.io/packages/build">
+  <meta name="description" content="Очень хотелось найти какое-то решение, которое позволило бы быстро разворачивать код. Что-то типа PythonAnywhere, но чтобы запускалось на raspberry PI">
   
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <meta property="og:title" content="Билд скрипты для редактора Atom"/>
+  <meta property="og:title" content="Микросервисы на питоне"/>
   <meta property="og:site_name" content="Strangers in the Q"/>
 
   
@@ -47,17 +47,24 @@
     <header>
       
         <div class="icon"></div>
-        <time datetime="2017-11-11T09:07:00.000Z"><a href="/2017/11/11/2017/2017-11-11-Билд скрипты для редактора Atom/">11-11-2017</a></time>
+        <time datetime="2018-01-21T09:38:00.000Z"><a href="/2018/01/21/2018/2018-01-21-Микросервисы на питоне/">21-01-2018</a></time>
       
       
   
-    <h1 class="title">Билд скрипты для редактора Atom</h1>
+    <h1 class="title">Микросервисы на питоне</h1>
   
 
     </header>
     <div class="entry">
       
-        <p><a href="https://atom.io/packages/build" target="_blank" rel="external">https://atom.io/packages/build</a></p>
+        <p>Очень хотелось найти какое-то решение, которое позволило бы быстро разворачивать код. Что-то типа PythonAnywhere, но чтобы запускалось на raspberry PI или на совсем слабых виртуалках.</p>
+<p>Чтоб можно было делать мини проекты, каких то служебных локальных ботов, мониторилки всякие. Что нашлось</p>
+<p>Во первых нашелся отличный список разного опенсорс софта на тему микросервисов.</p>
+<p> <a href="https://github.com/mfornos/awesome-microservices" target="_blank" rel="external">https://github.com/mfornos/awesome-microservices</a></p>
+<p> Ну и первым нашелся приямо промышленный openwhisk <a href="https://github.com/apache/incubator-openwhisk" target="_blank" rel="external">https://github.com/apache/incubator-openwhisk</a> с промышленной же кафкой и джавой</p>
+<p> Вариант не для машинки с 512 мб памяти.</p>
+<p> Потом нашелся dokku <a href="https://github.com/dokku/dokku" target="_blank" rel="external">https://github.com/dokku/dokku</a> который совершенно не прожорливый, но на ARM, похоже, что нужно собирать и долго ковыряться.</p>
+<p> И наконец нашелся piku <a href="https://github.com/rcarmo/piku" target="_blank" rel="external">https://github.com/rcarmo/piku</a> который ну прямо совсем для персонального использования, но меньше 1000 строк кода на Питоне размером и позмоляет быстро разворачивать воркеры и маленькие веб приложения на Питоне и Go. Он отлично завелся на 256 мб Orange Pi zero за 1000 руб.</p>
 
       
     </div>
@@ -72,7 +79,7 @@
         
   
   <div class="tags">
-    <a href="/tags/Atom/">Atom</a>
+    <a href="/tags/Микросервисы/">Микросервисы</a>, <a href="/tags/Python/">Python</a>
   </div>
 
         
@@ -115,7 +122,7 @@
   }(document, 'script', 'facebook-jssdk'));
 </script>
 
-<div class="fb-comments" data-href="http://strngrq.github.io/2017/11/11/2017/2017-11-11-Билд скрипты для редактора Atom/index.html" data-num-posts="5" data-width="840" data-colorscheme="light"></div>
+<div class="fb-comments" data-href="http://strngrq.github.io/2018/01/21/2018/2018-01-21-Микросервисы на питоне/index.html" data-num-posts="5" data-width="840" data-colorscheme="light"></div>
       
   
 </section>
