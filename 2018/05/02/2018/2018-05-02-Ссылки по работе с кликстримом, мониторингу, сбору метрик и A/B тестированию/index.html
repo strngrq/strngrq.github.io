@@ -3,17 +3,15 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Ссылки по работе с кликстримом, мониторингу, сбору метрик и A/B тестированию | Strangers in the Q</title>
+  <title>Ссылки по работе с кликстримом, мониторингу, сбору метрик | Strangers in the Q</title>
   <meta name="author" content="strngrq">
   
-  <meta name="description" content="Полезные ссылкиСистема для визуализации метрик graphite
-http://graphite.readthedocs.io/en/latest/faq.html
-Carbon - компонента Графита, ответственная з">
+  <meta name="description" content="Druid - база данных для хранения и обработки стриминговых данных в кластере.Может в качестве холодного стораджа работать с хадупом. На вход может полу">
   
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <meta property="og:title" content="Ссылки по работе с кликстримом, мониторингу, сбору метрик и A/B тестированию"/>
+  <meta property="og:title" content="Ссылки по работе с кликстримом, мониторингу, сбору метрик"/>
   <meta property="og:site_name" content="Strangers in the Q"/>
 
   
@@ -53,14 +51,24 @@ Carbon - компонента Графита, ответственная з">
       
       
   
-    <h1 class="title">Ссылки по работе с кликстримом, мониторингу, сбору метрик и A/B тестированию</h1>
+    <h1 class="title">Ссылки по работе с кликстримом, мониторингу, сбору метрик</h1>
   
 
     </header>
     <div class="entry">
       
-        <h1 id="Полезные-ссылки"><a href="#Полезные-ссылки" class="headerlink" title="Полезные ссылки"></a>Полезные ссылки</h1><h2 id="Система-для-визуализации-метрик-graphite"><a href="#Система-для-визуализации-метрик-graphite" class="headerlink" title="Система для визуализации метрик graphite"></a>Система для визуализации метрик graphite</h2><p><img src="/images/markdown-img-paste-20180502171459271.png" alt=""></p>
-<p><a href="http://graphite.readthedocs.io/en/latest/faq.html" target="_blank" rel="external">http://graphite.readthedocs.io/en/latest/faq.html</a></p>
+        <h2 id="Druid-база-данных-для-хранения-и-обработки-стриминговых-данных-в-кластере"><a href="#Druid-база-данных-для-хранения-и-обработки-стриминговых-данных-в-кластере" class="headerlink" title="Druid - база данных для хранения и обработки стриминговых данных в кластере."></a>Druid - база данных для хранения и обработки стриминговых данных в кластере.</h2><p>Может в качестве холодного стораджа работать с хадупом. На вход может получать данные из кафки.</p>
+<p><a href="http://druid.io/docs/latest/design/index.html" target="_blank" rel="external">http://druid.io/docs/latest/design/index.html</a></p>
+<p>Druid is an open source data store designed for OLAP queries on event data. This page is meant to provide readers with a high level overview of how Druid stores data, and the architecture of a Druid cluster.</p>
+<p>This data set is composed of three distinct components. If you are acquainted with OLAP terminology, the following concepts should be familiar.</p>
+<ul>
+<li><p><strong>Timestamp column</strong>: We treat timestamp separately because all of our queries center around the time axis.</p>
+</li>
+<li><p><strong>Dimension columns</strong>: Dimensions are string attributes of an event, and the columns most commonly used in filtering the data. We have four dimensions in our example data set: publisher, advertiser, gender, and country. They each represent an axis of the data that we’ve chosen to slice across.</p>
+</li>
+<li><p><strong>Metric columns</strong>: Metrics are columns used in aggregations and computations. In our example, the metrics are clicks and price. Metrics are usually numeric values, and computations include operations such as count, sum, and mean. Also known as measures in standard OLAP terminology.</p>
+</li>
+</ul>
 <h2 id="Carbon-компонента-Графита-ответственная-за-сбор-по-сети-метрик"><a href="#Carbon-компонента-Графита-ответственная-за-сбор-по-сети-метрик" class="headerlink" title="Carbon - компонента Графита, ответственная за сбор по сети метрик"></a>Carbon - компонента Графита, ответственная за сбор по сети метрик</h2><p><a href="https://github.com/graphite-project/carbon" target="_blank" rel="external">https://github.com/graphite-project/carbon</a></p>
 <h2 id="Cabot-система-алертинга-и-мониторинга"><a href="#Cabot-система-алертинга-и-мониторинга" class="headerlink" title="Cabot - система алертинга и мониторинга"></a>Cabot - система алертинга и мониторинга</h2><p><img src="/images/markdown-img-paste-20180502172043413.png" alt=""></p>
 <ul>
@@ -81,6 +89,7 @@ Carbon - компонента Графита, ответственная з">
 <li>Runbook flexibility with Jinja2 templating support</li>
 <li>Pluggable Architecture that simplifies customization</li>
 </ul>
+<hr>
 <h2 id="redash-Что-то-типа-BI-для-визуализации-метрик-и-мониторинга"><a href="#redash-Что-то-типа-BI-для-визуализации-метрик-и-мониторинга" class="headerlink" title="redash - Что то типа BI для визуализации метрик и мониторинга"></a>redash - Что то типа BI для визуализации метрик и мониторинга</h2><p>Make Your Company Data Driven. Connect to any data source, easily visualize and share your data.</p>
 <p><img src="/images/redash-anim.gif" alt=""></p>
 <p><a href="https://github.com/getredash/redash" target="_blank" rel="external">https://github.com/getredash/redash</a></p>
@@ -91,16 +100,22 @@ Carbon - компонента Графита, ответственная з">
 <p><strong>Bokeh</strong> provides an elegant and concise way to construct versatile graphics while delivering high-performance interactivity for large or streamed datasets.</p>
 <p><a href="https://github.com/bokeh/bokeh" target="_blank" rel="external">https://github.com/bokeh/bokeh</a></p>
 <p><img src="/images/markdown-img-paste-20180502173900112.png" alt=""></p>
+<hr>
 <h2 id="Monique-Dashboards"><a href="#Monique-Dashboards" class="headerlink" title="Monique Dashboards"></a>Monique Dashboards</h2><p><img src="/images/markdown-img-paste-20180502174249123.png" alt=""></p>
 <p><strong>Monique Dashboards</strong> - a library for creating dashboard applications, coming with fully functional web and API applications for creating custom dashboards. The library auto-parses multiple input formats, like JSON, ASCII tables, single values, making the code pushing metrics much shorter. The other feature is auto-creating dashboard tiles representing multiple instances of servers or microservices. The library supports the SQLite3 database for small deployments and the Cassandra database for highly-available deployments.</p>
+<p>–</p>
 <h2 id="superset-BI-написанная-на-питоне-Вроде-достаточно-удобная-для-работы-с-метриками"><a href="#superset-BI-написанная-на-питоне-Вроде-достаточно-удобная-для-работы-с-метриками" class="headerlink" title="superset - BI написанная на питоне. Вроде достаточно удобная для работы с метриками"></a>superset - BI написанная на питоне. Вроде достаточно удобная для работы с метриками</h2><p><img src="/images/markdown-img-paste-20180502180053131.png" alt=""></p>
 <p><a href="https://github.com/apache/incubator-superset" target="_blank" rel="external">https://github.com/apache/incubator-superset</a></p>
 <p>Apache Superset (incubating) is a modern, enterprise-ready business intelligence web application</p>
 <p>[this project used to be named Caravel, and Panoramix in the past]</p>
 <p><img src="/images/markdown-img-paste-20180502180429558.png" alt=""></p>
+<hr>
 <h2 id="https-github-com-plotly-dash-библиотека-для-интерактивной-графики-python"><a href="#https-github-com-plotly-dash-библиотека-для-интерактивной-графики-python" class="headerlink" title="https://github.com/plotly/dash - библиотека для интерактивной графики python"></a><a href="https://github.com/plotly/dash" target="_blank" rel="external">https://github.com/plotly/dash</a> - библиотека для интерактивной графики python</h2><p>Interactive, Reactive Web Apps for Python. Dash is a Python framework for building analytical web applications. No JavaScript required.</p>
 <p><a href="https://github.com/plotly/dash" target="_blank" rel="external">https://github.com/plotly/dash</a></p>
 <p><img src="/images/markdown-img-paste-20180502180735243.png" alt=""></p>
+<hr>
+<h2 id="Система-для-визуализации-метрик-graphite"><a href="#Система-для-визуализации-метрик-graphite" class="headerlink" title="Система для визуализации метрик graphite"></a>Система для визуализации метрик graphite</h2><p><img src="/images/markdown-img-paste-20180502171459271.png" alt=""></p>
+<p><a href="http://graphite.readthedocs.io/en/latest/faq.html" target="_blank" rel="external">http://graphite.readthedocs.io/en/latest/faq.html</a></p>
 
       
     </div>
@@ -196,7 +211,7 @@ Carbon - компонента Графита, ответственная з">
   
     <li><a href="/categories/Научто-популярное/">Научто-популярное</a><small>1</small></li>
   
-    <li><a href="/categories/Программирование/">Программирование</a><small>38</small></li>
+    <li><a href="/categories/Программирование/">Программирование</a><small>39</small></li>
   
     <li><a href="/categories/Путешествия/">Путешествия</a><small>1</small></li>
   
@@ -255,7 +270,7 @@ Carbon - компонента Графита, ответственная з">
   
     <li><a href="/tags/Литература/">Литература</a><small>1</small></li>
   
-    <li><a href="/tags/Машинное-обучение/">Машинное обучение</a><small>19</small></li>
+    <li><a href="/tags/Машинное-обучение/">Машинное обучение</a><small>20</small></li>
   
     <li><a href="/tags/Микросервисы/">Микросервисы</a><small>5</small></li>
   
