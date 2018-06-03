@@ -46,6 +46,109 @@
     <header>
       
         <div class="icon"></div>
+        <time datetime="2017-01-04T19:54:00.000Z"><a href="/2017/01/04/2017/Сервисы для микросервисов/">04-01-2017</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2017/01/04/2017/Сервисы для микросервисов/">Сервисы для микросервисов</a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <h2 id="Реверс-прокси"><a href="#Реверс-прокси" class="headerlink" title="Реверс прокси"></a>Реверс прокси</h2><p><a href="https://traefik.io" target="_blank" rel="external">traefik</a>  работает с системой управления микросервисами и проксирует только то, что реально запущено. Т.е. автоматическая конфигурация.</p>
+<p>Преимущества</p>
+<ul>
+<li>Не имеет зависимостей (написана на Golang)</li>
+<li>Поддерживается куча бэкендов</li>
+<li>Балансировщик нагрузки</li>
+<li>Поддерживает Вебсокеты</li>
+<li>Работает в кластере</li>
+</ul>
+<p><a href="http://vulcand.github.io" target="_blank" rel="external">vulcand</a> еще один реверс прокси и балансировщик нагрузки.  Управляется из централизованной конфигурации, есть возможность отслеживания лимитов нагрузки  с помощью middleware плагинов. Может автоматически проверять доступность серверов и выводить их из конфигурации, если они недоступны.</p>
+<h2 id="Сервисы-для-хранения-общих-распределенных-конфигураций"><a href="#Сервисы-для-хранения-общих-распределенных-конфигураций" class="headerlink" title="Сервисы для хранения общих распределенных конфигураций"></a>Сервисы для хранения общих распределенных конфигураций</h2><h3 id="etcd"><a href="#etcd" class="headerlink" title="etcd"></a>etcd</h3><p>Вероятно самым известным продуктом для управления распределенными конфигурациями является etcd. Это, по сути, распределенная база ключ-значение с возможностью авторизации на клиентском сертификате</p>
+<h3 id="Apache-ZooKeeper"><a href="#Apache-ZooKeeper" class="headerlink" title="Apache ZooKeeper"></a>Apache ZooKeeper</h3><p><a href="https://zookeeper.apache.org/doc/trunk/zookeeperOver.html" target="_blank" rel="external">Apache ZooKeeper</a> кластерная распределенная иерархическая база данных. Часто используется для управления кластерами. Статья со сценариями применения <a href="https://habrahabr.ru/company/yandex/blog/234335/" target="_blank" rel="external">https://habrahabr.ru/company/yandex/blog/234335/</a></p>
+<h3 id="Consul"><a href="#Consul" class="headerlink" title="Consul"></a>Consul</h3><p> <a href="https://www.consul.io" target="_blank" rel="external">Consul</a>.  Хотя он и является распределенной базой данных но позиционируется в первую очередь как Service Discovery. Сравнительно с ZooKeeper - не требуется наличия библиотек для доступа и не требуется нигде прописывания явного нод, на которых расположен кластер. Все автоматичекки делается локально размещаемым агентом и доступно через REST API на localhost. Так же в него встроен DNS сервер и он может выдавать конфигурации через запросы к DNS. Это удобно при доступе из скриптов.  Так же отсутствует выделенный мастер в кластере.</p>
+<h2 id="Управление-контейнерами"><a href="#Управление-контейнерами" class="headerlink" title="Управление контейнерами"></a>Управление контейнерами</h2><h3 id="Kubernetes"><a href="#Kubernetes" class="headerlink" title="Kubernetes"></a>Kubernetes</h3><p>Кластер <a href="http://kubernetes.io" target="_blank" rel="external">Kubernetes</a> включает в себя агента, запущенного на нодах (kubelet) и компоненты мастера.  Работает с etcd в качестве распределенного хранилища и  flannel для создания сетей между контейнерами. Работает с Docker контейнерами. Статья в журнале Хакер <a href="https://xakep.ru/2016/09/19/kubernetes/" target="_blank" rel="external">Как установить некоторую базовую установку</a></p>
+<h3 id="Marayhon"><a href="#Marayhon" class="headerlink" title="Marayhon"></a>Marayhon</h3><p><a href="https://mesosphere.github.io/marathon/" target="_blank" rel="external">Marayhon</a> система управления контейнерами для Mesos и DC/OS</p>
+<h3 id="Docker-Swarm"><a href="#Docker-Swarm" class="headerlink" title="Docker Swarm"></a>Docker Swarm</h3><p><a href="https://www.docker.com/products/docker-swarm" target="_blank" rel="external">Docker Swarm</a> - Штатное решение для создания кластеров Docker контейнеров. Из плюсов - ставится намного проще Kubernetes. Транслирует наружу стандартный Docker API, это позволяет управлять контейнерами используя привычный Docker инструментарий, например Docker Compose. На мой взгляд самый лучший выбор, если речь не идет о кластерах из сотен хостов.</p>
+<h2 id="Кластерные-операционные-системы"><a href="#Кластерные-операционные-системы" class="headerlink" title="Кластерные операционные системы"></a>Кластерные операционные системы</h2><ul>
+<li><a href="https://coreos.com" target="_blank" rel="external">CoreOS</a> Минималичтичный дистрибутив Linux заточенный под запуск Docker контейнеров в кластере.</li>
+<li>RancherOS</li>
+<li>Snappy Ubuntu Core</li>
+<li>RedHat Project Atomic</li>
+<li>Mesosphere DC/OS</li>
+<li><a href="https://vmware.github.io/photon/" target="_blank" rel="external">VMware Photon OS</a></li>
+<li><a href="https://testingclouds.wordpress.com/2015/02/27/introducing-huevosrancheros/" target="_blank" rel="external">Huev OS</a> это скорее прототип, но уже сразу понятно, что система с таким названием в России не очень пойдет. Как вы яхту назовете… А вообще - название от какого-то мексиканского блюда.</li>
+</ul>
+
+      
+    </div>
+    <footer>
+      
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
+  <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2017-01-03T21:13:00.000Z"><a href="/2017/01/04/2017/Почтовая программа N1/">04-01-2017</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2017/01/04/2017/Почтовая программа N1/">Почтовая программа N1</a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <h1 id="Nylas-N1"><a href="#Nylas-N1" class="headerlink" title="Nylas N1"></a>Nylas N1</h1><p>Выглядит <a href="https://nylas.com/" title="Nylas N1" target="_blank" rel="external">Nylas N1</a> как почтовая программа мечты. Работает с Exchange и imap исходники на гитхабе, устанавливается локально и в облаке. Еще они набирают сотрудников со следующими привилегиями:</p>
+<h2 id="Benefits-and-perks"><a href="#Benefits-and-perks" class="headerlink" title="Benefits and perks"></a>Benefits and perks</h2><ul>
+<li>Competitive pay</li>
+<li>Medical, vision and dental benefits for you and your family</li>
+<li>Meaningful equity</li>
+<li>Gym membership</li>
+<li>Buy or build your dream computer</li>
+<li>Relocation assistance</li>
+<li>Flexible work hours</li>
+<li>Catered lunch with the team</li>
+<li>Paid vacation</li>
+<li>$100 Monthly Lyft Credit</li>
+</ul>
+<p>Здорово бы понять как устроена модель, которая позволяет создавать такие монопродуктовые компании и получать под них финансирование.  Поисследую, возможно у истории интересное продолжение.</p>
+
+      
+    </div>
+    <footer>
+      
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
+  <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
         <time datetime="2017-01-03T19:53:00.000Z"><a href="/2017/01/03/2017/История названия/">03-01-2017</a></time>
       
       
@@ -121,7 +224,7 @@
   
     <li><a href="/categories/Научто-популярное/">Научто-популярное</a><small>1</small></li>
   
-    <li><a href="/categories/Программирование/">Программирование</a><small>51</small></li>
+    <li><a href="/categories/Программирование/">Программирование</a><small>53</small></li>
   
     <li><a href="/categories/Путешествия/">Путешествия</a><small>1</small></li>
   
@@ -184,7 +287,7 @@
   
     <li><a href="/tags/Литература/">Литература</a><small>1</small></li>
   
-    <li><a href="/tags/Машинное-обучение/">Машинное обучение</a><small>27</small></li>
+    <li><a href="/tags/Машинное-обучение/">Машинное обучение</a><small>29</small></li>
   
     <li><a href="/tags/Микросервисы/">Микросервисы</a><small>6</small></li>
   
