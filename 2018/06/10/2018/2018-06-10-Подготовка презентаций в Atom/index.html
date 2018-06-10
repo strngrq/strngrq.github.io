@@ -6,7 +6,9 @@
   <title>Подготовка презентаций в Atom | Strangers in the Q</title>
   <meta name="author" content="strngrq">
   
-  <meta name="description" content="Почему AtomИногда бывает необходимость быстро подготовить небольшую презентацию для иллюстрации какой-то идеи.">
+  <meta name="description" content="Почему AtomИногда бывает необходимость быстро подготовить небольшую презентацию для иллюстрации какой-то идеи.
+Варинаты - Marp
+Находится в состоянии к">
   
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -58,6 +60,13 @@
     <div class="entry">
       
         <h2 id="Почему-Atom"><a href="#Почему-Atom" class="headerlink" title="Почему Atom"></a>Почему Atom</h2><p>Иногда бывает необходимость быстро подготовить небольшую презентацию для иллюстрации какой-то идеи.</p>
+<p>Варинаты - Marp</p>
+<p>Находится в состоянии какой-то вечной доработки-переработки.</p>
+<p>Или писать на Markup в редакторе Atom.</p>
+<p>Для этого есть полезные плагины</p>
+<p>slides-preview <a href="https://atom.io/packages/slides-preview" target="_blank" rel="external">https://atom.io/packages/slides-preview</a></p>
+<p>Показывает презентацию. Рендеринг проводится с помощью remarkjs</p>
+<h2 id="Как-писать"><a href="#Как-писать" class="headerlink" title="Как писать"></a>Как писать</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line">--- новый слайд</span><br><span class="line"></span><br><span class="line">-- Появление новых булитов на слайде. Работает примерно так:</span><br><span class="line">    # Slide</span><br><span class="line"></span><br><span class="line">    - bullet 1</span><br><span class="line">    --</span><br><span class="line"></span><br><span class="line">    - bullet 2</span><br><span class="line"></span><br><span class="line">&lt;!---</span><br><span class="line">Так комментируем контент</span><br><span class="line">---&gt;</span><br><span class="line"></span><br><span class="line">class: center, middle - устанавливает, что текст на слайде идет с середины по горизонтали и по вертикали. Нужно ставить стиль обязательно только в начале слайда.</span><br><span class="line"></span><br><span class="line">background-image: url(image.jpg)</span><br><span class="line"></span><br><span class="line">count: false - не считать слайд и не выводить на нем счетчик слайдов</span><br><span class="line"></span><br><span class="line">Еще можно создавать шаблоны слайдов</span><br><span class="line"></span><br><span class="line">name: other-slide</span><br><span class="line"></span><br><span class="line">Some content.</span><br><span class="line"></span><br><span class="line">---</span><br><span class="line">template: other-slide</span><br><span class="line"></span><br><span class="line">Content appended to other-slide&apos;s content.</span><br><span class="line"></span><br><span class="line">Это фактически развитие синтаксиса с двумя минусами.</span><br><span class="line"></span><br><span class="line">И можно онлайн использовать стили</span><br><span class="line"></span><br><span class="line">.footnote[.red.bold[*] Important footnote]</span><br><span class="line">Resulting HTML extract:</span><br><span class="line"></span><br><span class="line">&lt;span class=&quot;footnote&quot;&gt;</span><br><span class="line">  &lt;span class=&quot;red bold&quot;&gt;*&lt;/span&gt; Important footnote</span><br><span class="line">&lt;/span&gt;</span><br><span class="line"></span><br><span class="line">Можно в таком синтаксисе использовать left, center и right</span><br><span class="line"></span><br><span class="line">В цитировании кода с помощью трех кавычек если строка начинается со *, она будет подсвечена</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -160,7 +169,7 @@
   
     <li><a href="/categories/Презентации/">Презентации</a><small>1</small></li>
   
-    <li><a href="/categories/Программирование/">Программирование</a><small>53</small></li>
+    <li><a href="/categories/Программирование/">Программирование</a><small>55</small></li>
   
     <li><a href="/categories/Путешествия/">Путешествия</a><small>1</small></li>
   
@@ -223,7 +232,7 @@
   
     <li><a href="/tags/Литература/">Литература</a><small>1</small></li>
   
-    <li><a href="/tags/Машинное-обучение/">Машинное обучение</a><small>29</small></li>
+    <li><a href="/tags/Машинное-обучение/">Машинное обучение</a><small>31</small></li>
   
     <li><a href="/tags/Микросервисы/">Микросервисы</a><small>6</small></li>
   
