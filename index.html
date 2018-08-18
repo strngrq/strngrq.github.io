@@ -46,6 +46,80 @@
     <header>
       
         <div class="icon"></div>
+        <time datetime="2018-08-18T11:45:00.000Z"><a href="/2018/08/18/2018/2018-08-18-Из любой программы на питоне делает CLI /">18-08-2018</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2018/08/18/2018/2018-08-18-Из любой программы на питоне делает CLI /">Из любой программы на питоне делает CLI </a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <p><a href="https://github.com/google/python-fire" target="_blank" rel="external">https://github.com/google/python-fire</a></p>
+<p><em>Python Fire is a library for automatically generating command line interfaces<br>(CLIs) from absolutely any Python object.</em></p>
+<h2 id="Использование"><a href="#Использование" class="headerlink" title="Использование"></a>Использование</h2><p>You can call <code>Fire</code> on any Python object:<br><br>functions, classes, modules, objects, dictionaries, lists, tuples, etc.<br>They all work!</p>
+<p>Here’s an example of calling Fire on a class.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> fire</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Calculator</span><span class="params">(object)</span>:</span></span><br><span class="line">  <span class="string">"""A simple calculator class."""</span></span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">def</span> <span class="title">double</span><span class="params">(self, number)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">2</span> * number</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">  fire.Fire(Calculator)</span><br></pre></td></tr></table></figure>
+<p>Then, from the command line, you can run:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">python calculator.py double 10  <span class="comment"># 20</span></span><br><span class="line">python calculator.py double --number=15  <span class="comment"># 30</span></span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer>
+      
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
+  <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2018-08-11T06:15:00.000Z"><a href="/2018/08/11/2018/2018-08-11-Менеджер и его время/">11-08-2018</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2018/08/11/2018/2018-08-11-Менеджер и его время/">Менеджер и его время, или Кому достанется обезьяна</a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <p><img src="/images/timemanagement.png" alt="timemanagement"></p>
+<p><a href="https://hbr-russia.ru/karera/upravlenie-vremenem/a10080" target="_blank" rel="external">https://hbr-russia.ru/karera/upravlenie-vremenem/a10080</a></p>
+<p>Статья 1974 года об управлении временем руководителями, несомненно все еще очень актуальная</p>
+
+      
+    </div>
+    <footer>
+      
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
+  <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
         <time datetime="2018-08-03T20:31:00.000Z"><a href="/2018/08/03/2018/2018-08-03-Lost in Math: How Beauty Leads Physics Astray /">03-08-2018</a></time>
       
       
@@ -523,74 +597,6 @@
 
 
 
-  <article class="post">
-  
-  <div class="post-content">
-    <header>
-      
-        <div class="icon"></div>
-        <time datetime="2018-06-02T18:04:00.000Z"><a href="/2018/06/02/2018/2018-06-02-Играет в Atari Deep Reinforcement Learning алгоритм/">02-06-2018</a></time>
-      
-      
-  
-    <h1 class="title"><a href="/2018/06/02/2018/2018-06-02-Играет в Atari Deep Reinforcement Learning алгоритм/">Играет в Atari Deep Reinforcement Learning алгоритм</a></h1>
-  
-
-    </header>
-    <div class="entry">
-      
-        <p><a href="https://www.cs.toronto.edu/%7Evmnih/docs/dqn.pdf" target="_blank" rel="external">https://www.cs.toronto.edu/%7Evmnih/docs/dqn.pdf</a></p>
-<p><kbd> We present the first deep learning model to successfully learn control policies di- rectly from high-dimensional sensory input using reinforcement learning. The model is a convolutional neural network, trained with a variant of Q-learning, whose input is raw pixels and whose output is a value function estimating future rewards. We apply our method to seven Atari 2600 games from the Arcade Learn- ing Environment, with no adjustment of the architecture or learning algorithm. We find that it outperforms all previous approaches on six of the games and surpasses a human expert on three of them. <kbd></kbd></kbd></p>
-
-      
-    </div>
-    <footer>
-      
-        
-        
-      
-      <div class="clearfix"></div>
-    </footer>
-  </div>
-</article>
-
-
-
-
-  <article class="post">
-  
-  <div class="post-content">
-    <header>
-      
-        <div class="icon"></div>
-        <time datetime="2018-06-02T18:02:00.000Z"><a href="/2018/06/02/2018/2018-06-02-Обучение с подкреплением на Pytorch4/">02-06-2018</a></time>
-      
-      
-  
-    <h1 class="title"><a href="/2018/06/02/2018/2018-06-02-Обучение с подкреплением на Pytorch4/">Обучение с подкреплением на Pytorch4</a></h1>
-  
-
-    </header>
-    <div class="entry">
-      
-        <p><a href="https://github.com/higgsfield/RL-Adventure-2" target="_blank" rel="external">https://github.com/higgsfield/RL-Adventure-2</a></p>
-<p>PyTorch4 tutorial of: actor critic / proximal policy optimization / acer / ddpg / twin dueling ddpg / soft actor critic / generative adversarial imitation learning / hindsight experience replay</p>
-
-      
-    </div>
-    <footer>
-      
-        
-        
-      
-      <div class="clearfix"></div>
-    </footer>
-  </div>
-</article>
-
-
-
-
 
 <nav id="pagination">
   
@@ -616,6 +622,8 @@
   
     <li><a href="/categories/DevOps/">DevOps</a><small>1</small></li>
   
+    <li><a href="/categories/Lifestyle/">Lifestyle</a><small>1</small></li>
+  
     <li><a href="/categories/Linux/">Linux</a><small>1</small></li>
   
     <li><a href="/categories/Визуализация-данных/">Визуализация данных</a><small>1</small></li>
@@ -640,7 +648,7 @@
   
     <li><a href="/categories/Презентации/">Презентации</a><small>1</small></li>
   
-    <li><a href="/categories/Программирование/">Программирование</a><small>61</small></li>
+    <li><a href="/categories/Программирование/">Программирование</a><small>62</small></li>
   
     <li><a href="/categories/Путешествия/">Путешествия</a><small>1</small></li>
   
@@ -677,7 +685,7 @@
   
     <li><a href="/tags/Pandas/">Pandas</a><small>1</small></li>
   
-    <li><a href="/tags/Python/">Python</a><small>13</small></li>
+    <li><a href="/tags/Python/">Python</a><small>14</small></li>
   
     <li><a href="/tags/Pytorch/">Pytorch</a><small>1</small></li>
   
@@ -686,6 +694,8 @@
     <li><a href="/tags/React-Native/">React Native</a><small>1</small></li>
   
     <li><a href="/tags/Tensorflow/">Tensorflow</a><small>1</small></li>
+  
+    <li><a href="/tags/Time-management/">Time management</a><small>1</small></li>
   
     <li><a href="/tags/ToDo/">ToDo</a><small>1</small></li>
   
