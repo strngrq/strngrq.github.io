@@ -46,6 +46,371 @@
     <header>
       
         <div class="icon"></div>
+        <time datetime="2019-02-07T22:01:00.000Z"><a href="/2019/02/07/2019/2019-02-07-Comprehensive Python Cheatsheet/">07-02-2019</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2019/02/07/2019/2019-02-07-Comprehensive Python Cheatsheet/">Comprehensive Python Cheatsheet</a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <p><img src="/images/python-cheatsheet.png" alt="python_cheatsheet"></p>
+<p><a href="https://gto76.github.io/python-cheatsheet/" target="_blank" rel="external">https://gto76.github.io/python-cheatsheet/</a></p>
+<p>For example:</p>
+<h2 id="Format"><a href="#Format" class="headerlink" title="Format"></a>Format</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;str&gt; = <span class="string">f'<span class="subst">&#123;&lt;el_1&gt;&#125;</span>, <span class="subst">&#123;&lt;el_2&gt;&#125;</span>'</span></span><br><span class="line">&lt;str&gt; = <span class="string">'&#123;&#125;, &#123;&#125;'</span>.format(&lt;el_1&gt;, &lt;el_2&gt;)</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>Person = namedtuple(<span class="string">'Person'</span>, <span class="string">'name height'</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>person = Person(<span class="string">'Jean-Luc'</span>, <span class="number">187</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="string">f'<span class="subst">&#123;person.height:<span class="number">10</span>&#125;</span>'</span></span><br><span class="line"><span class="string">'       187'</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="string">'&#123;p.height:10&#125;'</span>.format(p=person)</span><br><span class="line"><span class="string">'       187'</span></span><br></pre></td></tr></table></figure>
+<h3 id="General-Options"><a href="#General-Options" class="headerlink" title="General Options"></a>General Options</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#123;&lt;el&gt;:&lt;<span class="number">10</span>&#125;       <span class="comment"># '&lt;el&gt;      '</span></span><br><span class="line">&#123;&lt;el&gt;:&gt;<span class="number">10</span>&#125;       <span class="comment"># '      &lt;el&gt;'</span></span><br><span class="line">&#123;&lt;el&gt;:^<span class="number">10</span>&#125;       <span class="comment"># '   &lt;el&gt;   '</span></span><br><span class="line">&#123;&lt;el&gt;:-&gt;10&#125;      # '------&lt;el&gt;'</span><br><span class="line">&#123;&lt;el&gt;:&gt;<span class="number">0</span>&#125;        <span class="comment"># '&lt;el&gt;'</span></span><br></pre></td></tr></table></figure>
+<h3 id="String-Options"><a href="#String-Options" class="headerlink" title="String Options"></a>String Options</h3><p><strong><code>&#39;!r&#39;</code> calls object’s repr() method, instead of format(), to get a string.</strong><br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;<span class="string">'abcde'</span>!r:&lt;<span class="number">10</span>&#125;  <span class="comment"># "'abcde'   "</span></span><br></pre></td></tr></table></figure></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&#123;<span class="string">'abcde'</span>:<span class="number">.3</span>&#125;     <span class="comment"># 'abc'</span></span><br><span class="line">&#123;<span class="string">'abcde'</span>:<span class="number">10.3</span>&#125;   <span class="comment"># 'abc       '</span></span><br></pre></td></tr></table></figure>
+<h3 id="Number-Options"><a href="#Number-Options" class="headerlink" title="Number Options"></a>Number Options</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&#123;<span class="number">1.23456</span>:<span class="number">.3</span>f&#125;    <span class="comment"># '1.235'</span></span><br><span class="line">&#123;<span class="number">1.23456</span>:<span class="number">10.3</span>f&#125;  <span class="comment"># '     1.235'</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&#123; <span class="number">123456</span>:<span class="number">10</span>,&#125;    <span class="comment"># '   123,456'</span></span><br><span class="line">&#123; <span class="number">123456</span>:<span class="number">10</span>_&#125;    <span class="comment"># '   123_456'</span></span><br><span class="line">&#123; <span class="number">123456</span>:+<span class="number">10</span>&#125;    <span class="comment"># '   +123456'</span></span><br><span class="line">&#123;<span class="number">-123456</span>:=<span class="number">10</span>&#125;    <span class="comment"># '-   123456'</span></span><br><span class="line">&#123; <span class="number">123456</span>: &#125;      <span class="comment"># ' 123456'</span></span><br><span class="line">&#123;<span class="number">-123456</span>: &#125;      <span class="comment"># '-123456'</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#123;<span class="number">65</span>:c&#125;           <span class="comment"># 'A'</span></span><br><span class="line">&#123;<span class="number">3</span>:<span class="number">08</span>b&#125;          <span class="comment"># '00000011' -&gt; Binary with leading zeros.</span></span><br><span class="line">&#123;<span class="number">3</span>:<span class="number">0</span>&lt;<span class="number">8</span>b&#125;         <span class="comment"># '11000000' -&gt; Binary with trailing zeros.</span></span><br></pre></td></tr></table></figure>
+<h4 id="Float-presentation-types"><a href="#Float-presentation-types" class="headerlink" title="Float presentation types:"></a>Float presentation types:</h4><ul>
+<li><strong><code>&#39;f&#39;</code> - Fixed point: <code>.&lt;precision&gt;f</code></strong></li>
+<li><strong><code>&#39;%&#39;</code> - Percent: <code>.&lt;precision&gt;%</code></strong></li>
+<li><strong><code>&#39;e&#39;</code> - Exponent</strong></li>
+</ul>
+<h4 id="Integer-presentation-types"><a href="#Integer-presentation-types" class="headerlink" title="Integer presentation types:"></a>Integer presentation types:</h4><ul>
+<li><strong><code>&#39;c&#39;</code> - character</strong></li>
+<li><strong><code>&#39;b&#39;</code> - binary</strong></li>
+<li><strong><code>&#39;x&#39;</code> - hex</strong></li>
+<li><strong><code>&#39;X&#39;</code> - HEX</strong></li>
+</ul>
+
+      
+    </div>
+    <footer>
+      
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
+  <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2019-02-07T21:21:00.000Z"><a href="/2019/02/07/2019/2019-02-07-Бесплатная графика для компьютерных игр/">07-02-2019</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2019/02/07/2019/2019-02-07-Бесплатная графика для компьютерных игр/">Бесплатная графика для компьютерных игр</a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <p><a href="https://opengameart.org" target="_blank" rel="external">https://opengameart.org</a></p>
+<p><img src="/images/pix1.png" alt="pix1"></p>
+<p><img src="/images/pix2.png" alt="pix2"></p>
+
+      
+    </div>
+    <footer>
+      
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
+  <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2019-01-23T20:25:00.000Z"><a href="/2019/01/23/2019/2019-01-23-Minigo: A minimalist Go engine modeled after AlphaGo Zero, built on MuGo/">23-01-2019</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2019/01/23/2019/2019-01-23-Minigo: A minimalist Go engine modeled after AlphaGo Zero, built on MuGo/">Minigo: A minimalist Go engine modeled after AlphaGo Zero, built on MuGo</a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <p><a href="https://github.com/tensorflow/minigo" target="_blank" rel="external">https://github.com/tensorflow/minigo</a></p>
+<p>This is an implementation of a neural-network based Go AI, using <strong>TensorFlow</strong>. While inspired by DeepMind’s AlphaGo algorithm, this project is not a DeepMind project nor is it affiliated with the official AlphaGo project.</p>
+
+      
+    </div>
+    <footer>
+      
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
+  <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2019-01-22T16:46:00.000Z"><a href="/2019/01/22/2019/2019-01-22-file.io чтоб быстро поделиться файлом/">22-01-2019</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2019/01/22/2019/2019-01-22-file.io чтоб быстро поделиться файлом/">file.io чтоб быстро поделиться файлом</a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <p>Часто возникает необходимость быстро поделиться файлом и отправить на енго ссылку. Способов много, но все более или менее замороченные. Но есть специализированный сервис - <a href="https://www.file.io" target="_blank" rel="external">https://www.file.io</a></p>
+<p><img src="/images/fileio.png" alt="fileio"></p>
+<p>После загрузки файл автоматически удаляется. так же через API можно управлять, сколько времени он будет храниться.</p>
+
+      
+    </div>
+    <footer>
+      
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
+  <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2019-01-08T20:02:00.000Z"><a href="/2019/01/08/2019/2019-01-08-Новое в машинном обучении/">08-01-2019</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2019/01/08/2019/2019-01-08-Новое в машинном обучении/">Новое в машинном обучении</a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        
+      
+    </div>
+    <footer>
+      
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
+  <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2019-01-08T19:57:00.000Z"><a href="/2019/01/08/2019/2019-01-08-Новые идеи в машинном обучении/">08-01-2019</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2019/01/08/2019/2019-01-08-Новые идеи в машинном обучении/">Новые идеи в машинном обучении</a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        
+      
+    </div>
+    <footer>
+      
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
+  <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2019-01-07T19:34:00.000Z"><a href="/2019/01/07/2019/2019-01-07-Библиотека бесплатных звуков и лупов/">07-01-2019</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2019/01/07/2019/2019-01-07-Библиотека бесплатных звуков и лупов/">Библиотека бесплатных звуков и лупов</a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <p><img src="images/freesound.png" alt="freesound"></p>
+<p><a href="https://freesound.org/home/" target="_blank" rel="external">https://freesound.org/home/</a></p>
+
+      
+    </div>
+    <footer>
+      
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
+  <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2019-01-07T19:28:00.000Z"><a href="/2019/01/07/2019/2019-01-07-Тесуджи/">07-01-2019</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2019/01/07/2019/2019-01-07-Тесуджи/">Тесуджи</a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <p><a href="http://ostencible.free.fr/Go%20Books%20English/Elementary%20Go%20Series%20Vol.%203%20-%20Tesuji.pdf" target="_blank" rel="external">http://ostencible.free.fr/Go%20Books%20English/Elementary%20Go%20Series%20Vol.%203%20-%20Tesuji.pdf</a></p>
+<p><img src="/images/tesuji.png" alt="tesuji"></p>
+
+      
+    </div>
+    <footer>
+      
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
+  <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2019-01-07T19:23:00.000Z"><a href="/2019/01/07/2019/2019-01-07-Путеводитель по видам нейронных сетей/">07-01-2019</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2019/01/07/2019/2019-01-07-Путеводитель по видам нейронных сетей/">Путеводитель по видам нейронных сетей</a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <p><img src="/images/dl-zoo.png" alt="DL_ZOO"></p>
+<p><a href="http://www.asimovinstitute.org/neural-network-zoo/" target="_blank" rel="external">http://www.asimovinstitute.org/neural-network-zoo/</a></p>
+<p>With new neural network architectures popping up every now and then, it’s hard to keep track of them all. Knowing all the abbreviations being thrown around (DCIGN, BiLSTM, DCGAN, anyone?) can be a bit overwhelming at first.</p>
+<p>So I decided to compose a cheat sheet containing many of those architectures. Most of these are neural networks, some are completely different beasts. Though all of these architectures are presented as novel and unique, when I drew the node structures… their underlying relations started to make more sense.</p>
+<p><img src="/images/nn2.png" alt="nn2"></p>
+
+      
+    </div>
+    <footer>
+      
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
+  <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2019-01-07T15:58:00.000Z"><a href="/2019/01/07/2019/2019-01-07-A practical approach to learning machine learning/">07-01-2019</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2019/01/07/2019/2019-01-07-A practical approach to learning machine learning/">A practical approach to learning machine learning</a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <h2 id="practicalAI"><a href="#practicalAI" class="headerlink" title="practicalAI"></a>practicalAI</h2><p>Empowering you to use machine learning to get valuable insights from data.</p>
+<p>🔥 Implement basic ML algorithms and deep neural networks with PyTorch.</p>
+<p>🖥️ Run everything on the browser without any set up using Google Colab.</p>
+<p>📦 Learn object-oriented ML to code for products, not just tutorials.</p>
+<p><a href="https://github.com/GokuMohandas/practicalAI" target="_blank" rel="external">https://github.com/GokuMohandas/practicalAI</a></p>
+<p><img src="images/topics.png" alt="topics"></p>
+
+      
+    </div>
+    <footer>
+      
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
+  <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
         <time datetime="2019-01-07T15:48:00.000Z"><a href="/2019/01/07/2019/2019-01-07-Очень хороший обзор всех основных направлений развития ML/DL на русском/">07-01-2019</a></time>
       
       
@@ -217,414 +582,6 @@
 
 
 
-  <article class="post">
-  
-  <div class="post-content">
-    <header>
-      
-        <div class="icon"></div>
-        <time datetime="2018-09-03T21:22:00.000Z"><a href="/2018/09/03/2018/2018-09-03-Topsi project manager/">03-09-2018</a></time>
-      
-      
-  
-    <h1 class="title"><a href="/2018/09/03/2018/2018-09-03-Topsi project manager/">Topsi project manager</a></h1>
-  
-
-    </header>
-    <div class="entry">
-      
-        <h2 id="A-Desktop-Kanban-board-app"><a href="#A-Desktop-Kanban-board-app" class="headerlink" title="A Desktop Kanban board app."></a>A Desktop Kanban board app.</h2><p><a href="https://github.com/Physiix/topsi-project-manager" target="_blank" rel="external">https://github.com/Physiix/topsi-project-manager</a></p>
-<p><img src="/images/kanban1.png" alt="Kanban1"></p>
-
-      
-    </div>
-    <footer>
-      
-        
-        
-      
-      <div class="clearfix"></div>
-    </footer>
-  </div>
-</article>
-
-
-
-
-  <article class="post">
-  
-  <div class="post-content">
-    <header>
-      
-        <div class="icon"></div>
-        <time datetime="2018-09-03T21:16:00.000Z"><a href="/2018/09/03/2018/2018-09-03-Наследник PhantomJS/">03-09-2018</a></time>
-      
-      
-  
-    <h1 class="title"><a href="/2018/09/03/2018/2018-09-03-Наследник PhantomJS/">Наследник PhantomJS</a></h1>
-  
-
-    </header>
-    <div class="entry">
-      
-        <p><a href="https://github.com/GoogleChrome/puppeteer" target="_blank" rel="external">https://github.com/GoogleChrome/puppeteer</a></p>
-<p><img src="/images/puppeter1.png" alt="Puppeter1"></p>
-<p>Most things that you can do manually in the browser can be done using Puppeteer! Here are a few examples to get you started:</p>
-<ul>
-<li>Generate screenshots and PDFs of pages.</li>
-<li>Crawl a SPA and generate pre-rendered content (i.e. “SSR”).</li>
-<li>Automate form submission, UI testing, keyboard input, etc.</li>
-<li>Create an up-to-date, automated testing environment. Run your tests directly in the latest version of Chrome using the latest JavaScript and browser features.</li>
-<li>Capture a timeline trace of your site to help diagnose performance issues.</li>
-<li>Test Chrome Extensions.</li>
-</ul>
-<p><a href="https://github.com/checkly/puppeteer-recorder" target="_blank" rel="external">https://github.com/checkly/puppeteer-recorder</a></p>
-<h1 id="Puppeteer-recorder"><a href="#Puppeteer-recorder" class="headerlink" title="Puppeteer recorder"></a>Puppeteer recorder</h1><p>Это расширение Chrome записывает все, что происходит при взаимодействии с браузером и генерирует скрипт для <strong>Puppeteer</strong></p>
-
-      
-    </div>
-    <footer>
-      
-        
-        
-      
-      <div class="clearfix"></div>
-    </footer>
-  </div>
-</article>
-
-
-
-
-  <article class="post">
-  
-  <div class="post-content">
-    <header>
-      
-        <div class="icon"></div>
-        <time datetime="2018-09-02T22:05:00.000Z"><a href="/2018/09/03/2018/2018-09-03-Learn python/">03-09-2018</a></time>
-      
-      
-  
-    <h1 class="title"><a href="/2018/09/03/2018/2018-09-03-Learn python/">Learn python</a></h1>
-  
-
-    </header>
-    <div class="entry">
-      
-        <p>📚 Playground and cheatsheet for learning Python</p>
-<p><a href="https://github.com/trekhleb/learn-python" target="_blank" rel="external">https://github.com/trekhleb/learn-python</a></p>
-<h2 id="Getting-Started"><a href="#Getting-Started" class="headerlink" title="Getting Started"></a>Getting Started</h2><ul>
-<li>What is Python</li>
-<li>Python Syntax</li>
-<li>Variables<h2 id="Operators"><a href="#Operators" class="headerlink" title="Operators"></a>Operators</h2></li>
-<li>Arithmetic Operators (+, -, <em>, /, //, %, *</em>)</li>
-<li>Bitwise Operators (&amp;, |, ^, &gt;&gt;, &lt;&lt;, ~)</li>
-<li>Assignment Operators (=, +=, -=, /=, //= etc.)</li>
-<li>Comparison Operator (==, !=, &gt;, &lt;, &gt;=, &lt;=)</li>
-<li>Logical Operators (and, or, not)</li>
-<li>Identity Operators (is, is not)</li>
-<li>Membership Operators (in, not in)
-      
-    </div>
-    <footer>
-      
-        
-          <div class="alignleft">
-            <a href="/2018/09/03/2018/2018-09-03-Learn python/#more" class="more-link">Read More</a>
-          </div>
-        
-        
-      
-      <div class="clearfix"></div>
-    </footer>
-  </div>
-</article>
-
-
-
-
-  <article class="post">
-  
-  <div class="post-content">
-    <header>
-      
-        <div class="icon"></div>
-        <time datetime="2018-09-02T22:03:00.000Z"><a href="/2018/09/03/2018/2018-09-03-Learn Deep Reinforcement Learning in depth in 60 days/">03-09-2018</a></time>
-      
-      
-  
-    <h1 class="title"><a href="/2018/09/03/2018/2018-09-03-Learn Deep Reinforcement Learning in depth in 60 days/">Learn Deep Reinforcement Learning in depth in 60 days</a></h1>
-  
-
-    </header>
-    <div class="entry">
-      
-        <p><a href="https://github.com/andri27-ts/60_Days_RL_Challenge" target="_blank" rel="external">https://github.com/andri27-ts/60_Days_RL_Challenge</a></p>
-<p><img src="/images/challangerl.png" alt="challangeRL"></p>
-
-      
-    </div>
-    <footer>
-      
-        
-        
-      
-      <div class="clearfix"></div>
-    </footer>
-  </div>
-</article>
-
-
-
-
-  <article class="post">
-  
-  <div class="post-content">
-    <header>
-      
-        <div class="icon"></div>
-        <time datetime="2018-09-02T21:59:00.000Z"><a href="/2018/09/02/2018/2018-09-02-Веб приложение для криптованных иерерхических заметок/">02-09-2018</a></time>
-      
-      
-  
-    <h1 class="title"><a href="/2018/09/02/2018/2018-09-02-Веб приложение для криптованных иерерхических заметок/">Веб приложение для криптованных иерерхических заметок</a></h1>
-  
-
-    </header>
-    <div class="entry">
-      
-        <p><a href="https://github.com/zadam/trilium" target="_blank" rel="external">https://github.com/zadam/trilium</a></p>
-<p><img src="/images/trilium1.png" alt="Trilium1"></p>
-<p><img src="images/trilium2.png" alt="Trilium2"></p>
-<h1 id="Возможности"><a href="#Возможности" class="headerlink" title="Возможности"></a>Возможности</h1><ul>
-<li>Notes can be arranged into arbitrarily deep hierarchy (tree)</li>
-<li>Notes can have more than 1 parents - see cloning</li>
-<li>Rich WYSIWYG note editing including e.g. tables and images with markdown autoformat</li>
-<li>Support for editing notes with source code, including syntax highlighting</li>
-<li>Fast and easy navigation between notes</li>
-<li>Seamless note versioning</li>
-<li>Note attributes can be used for note organization, querying and advanced [[scripting|scripts]]</li>
-<li>Synchronization with self-hosted sync server</li>
-<li>Strong note encryption</li>
-<li>Scripting - see Advanced showcases</li>
-<li>Scales well in both usability and performance upwards of 100 000 notes</li>
-<li>Night theme</li>
-</ul>
-
-      
-    </div>
-    <footer>
-      
-        
-        
-      
-      <div class="clearfix"></div>
-    </footer>
-  </div>
-</article>
-
-
-
-
-  <article class="post">
-  
-  <div class="post-content">
-    <header>
-      
-        <div class="icon"></div>
-        <time datetime="2018-08-25T10:23:00.000Z"><a href="/2018/08/25/2018/2018-08-25-Лучшие практики node на август 2018/">25-08-2018</a></time>
-      
-      
-  
-    <h1 class="title"><a href="/2018/08/25/2018/2018-08-25-Лучшие практики node на август 2018/">Лучшие практики node на август 2018</a></h1>
-  
-
-    </header>
-    <div class="entry">
-      
-        <p><a href="https://github.com/i0natan/nodebestpractices" target="_blank" rel="external">https://github.com/i0natan/nodebestpractices</a></p>
-<p><img src="/images/nodebest.png" alt="nodebest"></p>
-<ul>
-<li>nProject structure Practices (5)</li>
-<li>Error Handling Practices (11)</li>
-<li>Code Style Practices (12)</li>
-<li>Testing And Overall Quality Practices (8)</li>
-<li>Going To Production Practices (17)</li>
-<li>⭐️ New: Security Practices (23)</li>
-<li>Performance Practices (coming soon)</li>
-</ul>
-
-      
-    </div>
-    <footer>
-      
-        
-        
-      
-      <div class="clearfix"></div>
-    </footer>
-  </div>
-</article>
-
-
-
-
-  <article class="post">
-  
-  <div class="post-content">
-    <header>
-      
-        <div class="icon"></div>
-        <time datetime="2018-08-25T10:16:00.000Z"><a href="/2018/08/25/2018/2018-08-25-Lore makes machine learning approachable for Software Engineers and maintainable for Machine Learning Researchers/">25-08-2018</a></time>
-      
-      
-  
-    <h1 class="title"><a href="/2018/08/25/2018/2018-08-25-Lore makes machine learning approachable for Software Engineers and maintainable for Machine Learning Researchers/">Lore makes machine learning approachable for Software Engineers and maintainable for Machine Learning Researchers</a></h1>
-  
-
-    </header>
-    <div class="entry">
-      
-        <p><a href="https://github.com/instacart/lore" target="_blank" rel="external">https://github.com/instacart/lore</a></p>
-<p><img src="/images/lore.png" alt="lore"></p>
-<h2 id="Возможности"><a href="#Возможности" class="headerlink" title="Возможности"></a>Возможности</h2><ul>
-<li>Models support hyper parameter search over estimators with a data pipeline. They will efficiently utilize multiple GPUs (if available) with a couple different strategies, and can be saved and distributed for horizontal scalability.</li>
-<li>Estimators from multiple packages are supported: <code>Keras &lt;https://keras.io/&gt;</code><em> (TensorFlow/Theano/CNTK), <code>XGBoost &lt;https://xgboost.readthedocs.io/&gt;</code></em> and <code>SciKit Learn &lt;http://scikit-learn.org/stable/&gt;</code>_  They can all be subclassed with build, fit or predict overridden to completely customize your algorithm and architecture, while still benefiting from everything else.</li>
-<li>Pipelines avoid information leaks between train and test sets, and one pipeline allows experimentation with many different estimators. A disk based pipeline is available if you exceed your machines available RAM.</li>
-<li>Transformers standardize advanced feature engineering. For example, convert an American first name to its statistical age or gender using US Census data. Extract the geographic area code from a free form phone number string. Common date, time and string operations are supported efficiently through pandas.</li>
-<li>Encoders offer robust input to your estimators, and avoid common problems with missing and long tail values. They are well tested to save you from garbage in/garbage out.</li>
-<li>IO connections are configured and pooled in a standard way across the app for popular (no)sql databases, with transaction management and read write optimizations for bulk data, rather than typical ORM single row operations. Connections share a configurable query cache, in addition to encrypted S3 buckets for distributing models and datasets.</li>
-<li>Dependency Management for each individual app in development, that can be 100% replicated to production. No manual activation, or magic env vars, or hidden files that break python for everything else. No knowledge required of venv, pyenv, pyvenv, virtualenv, virtualenvwrapper, pipenv, conda. Ain’t nobody got time for that.</li>
-<li>Tests for your models can be run in your Continuous Integration environment, allowing Continuous Deployment for code and training updates, without increased work for your infrastructure team.</li>
-<li>Workflow Support whether you prefer the command line, a python console, jupyter notebook, or IDE. Every environment gets readable logging and timing statements configured for both production and development.</li>
-</ul>
-
-      
-    </div>
-    <footer>
-      
-        
-        
-      
-      <div class="clearfix"></div>
-    </footer>
-  </div>
-</article>
-
-
-
-
-  <article class="post">
-  
-  <div class="post-content">
-    <header>
-      
-        <div class="icon"></div>
-        <time datetime="2018-08-18T12:45:00.000Z"><a href="/2018/08/18/2018/2018-08-18-Из любой программы на питоне делает CLI /">18-08-2018</a></time>
-      
-      
-  
-    <h1 class="title"><a href="/2018/08/18/2018/2018-08-18-Из любой программы на питоне делает CLI /">Из любой программы на питоне делает CLI </a></h1>
-  
-
-    </header>
-    <div class="entry">
-      
-        <p><a href="https://github.com/google/python-fire" target="_blank" rel="external">https://github.com/google/python-fire</a></p>
-<p><em>Python Fire is a library for automatically generating command line interfaces<br>(CLIs) from absolutely any Python object.</em></p>
-<h2 id="Использование"><a href="#Использование" class="headerlink" title="Использование"></a>Использование</h2><p>You can call <code>Fire</code> on any Python object:<br><br>functions, classes, modules, objects, dictionaries, lists, tuples, etc.<br>They all work!</p>
-<p>Here’s an example of calling Fire on a class.</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> fire</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Calculator</span><span class="params">(object)</span>:</span></span><br><span class="line">  <span class="string">"""A simple calculator class."""</span></span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">def</span> <span class="title">double</span><span class="params">(self, number)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">2</span> * number</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">  fire.Fire(Calculator)</span><br></pre></td></tr></table></figure>
-<p>Then, from the command line, you can run:</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">python calculator.py double 10  <span class="comment"># 20</span></span><br><span class="line">python calculator.py double --number=15  <span class="comment"># 30</span></span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-    <footer>
-      
-        
-        
-      
-      <div class="clearfix"></div>
-    </footer>
-  </div>
-</article>
-
-
-
-
-  <article class="post">
-  
-  <div class="post-content">
-    <header>
-      
-        <div class="icon"></div>
-        <time datetime="2018-08-11T07:15:00.000Z"><a href="/2018/08/11/2018/2018-08-11-Менеджер и его время/">11-08-2018</a></time>
-      
-      
-  
-    <h1 class="title"><a href="/2018/08/11/2018/2018-08-11-Менеджер и его время/">Менеджер и его время, или Кому достанется обезьяна</a></h1>
-  
-
-    </header>
-    <div class="entry">
-      
-        <p><img src="/images/timemanagement.png" alt="timemanagement"></p>
-<p><a href="https://hbr-russia.ru/karera/upravlenie-vremenem/a10080" target="_blank" rel="external">https://hbr-russia.ru/karera/upravlenie-vremenem/a10080</a></p>
-<p>Статья 1974 года об управлении временем руководителями, несомненно все еще очень актуальная</p>
-
-      
-    </div>
-    <footer>
-      
-        
-        
-      
-      <div class="clearfix"></div>
-    </footer>
-  </div>
-</article>
-
-
-
-
-  <article class="post">
-  
-  <div class="post-content">
-    <header>
-      
-        <div class="icon"></div>
-        <time datetime="2018-08-03T21:31:00.000Z"><a href="/2018/08/03/2018/2018-08-03-Lost in Math: How Beauty Leads Physics Astray /">03-08-2018</a></time>
-      
-      
-  
-    <h1 class="title"><a href="/2018/08/03/2018/2018-08-03-Lost in Math: How Beauty Leads Physics Astray /">Lost in Math: How Beauty Leads Physics Astray </a></h1>
-  
-
-    </header>
-    <div class="entry">
-      
-        <p>Книга про красоту современной математики и физики</p>
-<p><img src="/images/lostin.png" alt="lostin"></p>
-<p>A contrarian argues that modern physicists’ obsession with beauty has given us wonderful math but bad science</p>
-<p>Whether pondering black holes or predicting discoveries at CERN, physicists believe the best theories are beautiful, natural, and elegant, and this standard separates popular theories from disposable ones. This is why, Sabine Hossenfelder argues, we have not seen a major breakthrough in the foundations of physics for more than four decades. The belief in beauty has become so dogmatic that it no</p>
-
-      
-    </div>
-    <footer>
-      
-        
-        
-      
-      <div class="clearfix"></div>
-    </footer>
-  </div>
-</article>
-
-
-
-
 
 <nav id="pagination">
   
@@ -654,6 +611,8 @@
   
     <li><a href="/categories/Linux/">Linux</a><small>1</small></li>
   
+    <li><a href="/categories/Music/">Music</a><small>1</small></li>
+  
     <li><a href="/categories/Network/">Network</a><small>1</small></li>
   
     <li><a href="/categories/Визуализация-данных/">Визуализация данных</a><small>1</small></li>
@@ -678,9 +637,11 @@
   
     <li><a href="/categories/Презентации/">Презентации</a><small>1</small></li>
   
-    <li><a href="/categories/Программирование/">Программирование</a><small>73</small></li>
+    <li><a href="/categories/Программирование/">Программирование</a><small>81</small></li>
   
     <li><a href="/categories/Путешествия/">Путешествия</a><small>1</small></li>
+  
+    <li><a href="/categories/Утилиты/">Утилиты</a><small>1</small></li>
   
     <li><a href="/categories/Юмор/">Юмор</a><small>1</small></li>
   
@@ -701,7 +662,11 @@
   
     <li><a href="/tags/Blockchain/">Blockchain</a><small>2</small></li>
   
+    <li><a href="/tags/Games/">Games</a><small>1</small></li>
+  
     <li><a href="/tags/Go/">Go</a><small>1</small></li>
+  
+    <li><a href="/tags/Graphics/">Graphics</a><small>1</small></li>
   
     <li><a href="/tags/HR/">HR</a><small>1</small></li>
   
@@ -711,6 +676,8 @@
   
     <li><a href="/tags/Minecraft/">Minecraft</a><small>3</small></li>
   
+    <li><a href="/tags/Music/">Music</a><small>1</small></li>
+  
     <li><a href="/tags/NLP/">NLP</a><small>2</small></li>
   
     <li><a href="/tags/Node-js/">Node.js</a><small>1</small></li>
@@ -719,13 +686,17 @@
   
     <li><a href="/tags/Pandas/">Pandas</a><small>1</small></li>
   
-    <li><a href="/tags/Python/">Python</a><small>15</small></li>
+    <li><a href="/tags/Photostock/">Photostock</a><small>1</small></li>
+  
+    <li><a href="/tags/Python/">Python</a><small>16</small></li>
   
     <li><a href="/tags/Pytorch/">Pytorch</a><small>1</small></li>
   
     <li><a href="/tags/React/">React</a><small>2</small></li>
   
     <li><a href="/tags/React-Native/">React Native</a><small>1</small></li>
+  
+    <li><a href="/tags/Sound/">Sound</a><small>1</small></li>
   
     <li><a href="/tags/Tensorflow/">Tensorflow</a><small>1</small></li>
   
@@ -749,7 +720,7 @@
   
     <li><a href="/tags/Визуализация/">Визуализация</a><small>1</small></li>
   
-    <li><a href="/tags/Го/">Го</a><small>1</small></li>
+    <li><a href="/tags/Го/">Го</a><small>3</small></li>
   
     <li><a href="/tags/Интернет-будущего/">Интернет будущего</a><small>1</small></li>
   
@@ -757,7 +728,7 @@
   
     <li><a href="/tags/Математика/">Математика</a><small>1</small></li>
   
-    <li><a href="/tags/Машинное-обучение/">Машинное обучение</a><small>37</small></li>
+    <li><a href="/tags/Машинное-обучение/">Машинное обучение</a><small>42</small></li>
   
     <li><a href="/tags/Микросервисы/">Микросервисы</a><small>6</small></li>
   
